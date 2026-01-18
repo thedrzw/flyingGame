@@ -1,0 +1,35 @@
+levels:
+    level 1:
+        tutorial level - shows the player how to move
+        a few walls - more and more as the stage progresses
+    
+    level 2:
+        more walls from both sides
+        walls come faster
+
+    level 3:
+        more walls both sides - single enemy shooting at the player
+        when completed, unlock The Tree (gun)
+    
+    level 4:
+        walls from one side, enemies spawn in with the walls - player has to shoot them
+
+    level 5:
+        more walls from both sides, enemies spawn in more frequently
+
+
+
+The Tree:
+    upgrade ideas:
+        unlock and upgrade gun
+        unlock and upgrade dashing
+        increase player speed/health
+
+    works based on tokens
+
+
+window X button should ALWAYS quit and save
+pressing escape...
+    on the level select/tree screens should go to the title screen
+    on the title screen should do nothing
+    in a level should open a pause menu
