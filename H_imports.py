@@ -1,7 +1,7 @@
 import pygame
 from H_constants import *
 from H_colors import *
-
+from pathlib import Path
 
 def placeholder_sprite(width, height, color = (0, 0, 0)) -> pygame.Surface:
     sprite = pygame.Surface([width, height])
@@ -20,7 +20,7 @@ def import_sprite(file_path: str,
                   position: tuple[int | str, int | str] = (0, 0)
                   ) -> tuple[pygame.Surface, pygame.Rect] | pygame.Surface:
     try:
-        sprite = pygame.image.load('C:\\Users\\zianr\\OneDrive\\Desktop\\coding things\\python\\games\\fly_game\\assets\\' + file_path).convert_alpha()
+        sprite = pygame.image.load(Path(__file__).parent.__str__() + '\\assets\\' + file_path).convert_alpha()
     except FileNotFoundError:
         sprite = pygame.image.load(file_path).convert_alpha()
 
@@ -56,8 +56,8 @@ def import_font(font_name: str, font_size: int) -> pygame.font.Font:
 
 
 #font file paths:
-# - C:\Users\zianr\OneDrive\Desktop\coding things\python\games\fly_game\assets\fonts\Pixelify_Sans\PixelifySans-Regular.ttf
-# - C:\Users\zianr\OneDrive\Desktop\coding things\python\games\fly_game\assets\fonts\Raleway\Raleway-Regular.ttf
+# - fly_game\assets\fonts\Pixelify_Sans\PixelifySans-Regular.ttf
+# - fly_game\assets\fonts\Raleway\Raleway-Regular.ttf
 
 def import_font_sizes(font_name: str | None, font_sizes: tuple[int, ...]) -> dict[int, pygame.font.Font]:
     '''
@@ -70,7 +70,7 @@ def import_font_sizes(font_name: str | None, font_sizes: tuple[int, ...]) -> dic
     fonts = {}
     for font_size in font_sizes:
         if font_name == None:
-            font = pygame.font.Font(r'C:\Users\zianr\OneDrive\Desktop\coding things\python\games\fly_game\assets\fonts\Raleway\Raleway-Regular.ttf', font_size)
+            font = pygame.font.Font(Path(__file__).parent.__str__() + r'\assets\fonts\Raleway\Raleway-Regular.ttf', font_size)
         else:
             font = import_font(font_name, font_size)
 
@@ -90,7 +90,7 @@ class AutoFont():
     font[50] # returns the font in size 50
     '''
 
-    def __init__(self, file_path: str = r'C:\Users\zianr\OneDrive\Desktop\coding things\python\games\fly_game\assets\fonts\Raleway\Raleway-Regular.ttf'):
+    def __init__(self, file_path: str = Path(__file__).parent.__str__() + r'\assets\fonts\Raleway\Raleway-Regular.ttf'):
         self.file_path = file_path
         self.fonts = {}
 

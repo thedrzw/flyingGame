@@ -4,13 +4,14 @@ look in H_save_data.py for what i did instead
 im keeping this file here because the code i wrote here is actually pretty lit
 '''
 import json
+from pathlib import Path
 
 #self-explainatory functions tbh
 
 #gets player data - leave keys as None to get the full dictionary, or specify a key/iterable of keys
 #rare python one-liner used
 def get_player_data(keys = None) -> dict:
-    with open(r'C:\Users\zianr\OneDrive\Desktop\coding things\python\games\fly_game\save data\save_data.json', 'r') as file:
+    with open(Path(__file__).parent.__str__() + r'\save data\save_data.json', 'r') as file:
         save_data = json.load(file)
     
     if keys:
@@ -24,7 +25,7 @@ def get_player_data(keys = None) -> dict:
 #a cockroach with no braincells could understand this function
 #also you should use the set_player_data function instead of this one cause its just better
 def save_all_player_data(save_data: dict) -> None:
-    with open(r'C:\Users\zianr\OneDrive\Desktop\coding things\python\games\fly_game\save data\save_data.json', 'w') as file:
+    with open(Path(__file__).parent.__str__() + r'\save data\save_data.json', 'w') as file:
         json.dump(save_data, file, indent = 4)
 
 #input the key and the value to change it to - leave key as None to replace ALL save data with the value
