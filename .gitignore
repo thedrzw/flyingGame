@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+save data/log.txt
+save data/save_data.json
+ohio/*
