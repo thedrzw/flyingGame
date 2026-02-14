@@ -1,0 +1,65 @@
+file that begin with:
+H - helper files with functions and classes and stuff to be imported
+L - level files which are playable levels
+S - screen files which are UIs
+
+use main.py to run any of the L or S files or else it'll do nothing
+
+
+chatgpt prompt:
+I've been working on a project in Python, and came across a coding problem that stumped me. I have to delete instances of a class from a list, based on a variable within said instance. For example, the list might be: [Object1, Object2, Object3]. I have to iterate through the list and delete the objects which have the variable deleted set to True. I can't just simply iterate through the list because deleting objects in the list you're iterating from will cause it to skip items.
+Can you help me find a solution to this?
+
+ok wtf chatgpt just instantly solved the problem??
+link: https://chatgpt.com/share/ce752ac5-5818-474d-9a9f-ecd04d057657
+
+
+chatgpt prompt v2!
+I've been working on a project in Python, and wanted to create a class in which two class attributes are able to update each other. For example, if I have class attributes called 'x1', 'x2', and 'width', I want to be able to change 'x1' and have it update 'width', while also being able to change 'width', and have it update 'x2'.
+Here is some example code:
+```
+from typing import Any
+
+class Coordinates:
+
+    def __init__(self, x1, y1, x2, y2) -> None:
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+
+        self.width = x2 - x1
+        self.height = y2 - y1
+    
+    def __setattr__(self, name: str, value: Any):
+        super().__setattr__(name, value)
+
+        if name == 'x1':
+            self.width = self.x2 - self.x1
+
+        if name == 'width':
+            self.x2 = self.x1 + self.width
+    
+
+coordinates = Coordinates(1, 1, 10, 10)
+print(coordinates.width) # should return 9
+
+coordinates.x1 = 4
+print(coordinates.width) # should return 6
+
+coordinates.width = 100
+print(coordinates.x2) # should return 101
+```
+Can you help me find a solution to this?
+
+ok so in conclusion doing this is way too complex and i should just find a work-around lmao
+
+
+chatgpt prompt v3!
+How would I avoid infinite recursion in this situation?
+```
+@x.setter
+def x(self, num: float | int):
+    self.x = num # causes infinite recusion because it calls this function while trying to set x
+    ... # additional code here
+```
