@@ -1,6 +1,6 @@
 # Unnamed Flying Game
 
-A Flappy Bird inspired game written using PyGame in Python. It is currently unfinished
+A Flappy Bird inspired game written using PyGame in Python. It is currently unfinished.
 
 ## Description
 
